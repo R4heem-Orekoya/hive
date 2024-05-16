@@ -7,7 +7,6 @@ import Logo from "./Logo"
 import { getServerSideUser } from "@/lib/payload-utils"
 import { cookies } from "next/headers"
 import UserAccountNav from "./UserAccountNav"
-import MobileNav from "./MobileNav"
 import { cn } from "@/lib/utils"
 
 const Navbar = async () => {
