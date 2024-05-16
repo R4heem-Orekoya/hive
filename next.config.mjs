@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
    images: {
-      domains: ["localhost", "https://markethive.up.railway.app"]
-   }
+		remotePatterns: [
+			{
+				protocol: "http",
+				hostname: "localhost",
+			},
+			{
+				protocol: "https",
+				hostname: "https://markethive.up.railway.app",
+			},
+		],
+	},
 };
 
 export default nextConfig;
