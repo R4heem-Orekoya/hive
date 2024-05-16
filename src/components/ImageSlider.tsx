@@ -8,6 +8,7 @@ interface ImageSliderProps{
 }
 
 const ImageSlider = ({ urls }: ImageSliderProps ) => {
+   // console.log(urls)
    return (
       <div className="group bg-zinc-100 rounded-lg border overflow-hidden">
          <Carousel 
@@ -19,7 +20,7 @@ const ImageSlider = ({ urls }: ImageSliderProps ) => {
                      className='z-10 w-full h-full'>
                      {/* <Image loading='eager' src={url} alt="Product image" fill className="w-full h-full object-cover object-center"/> */}
                      <img src={url} alt="" className="w-full h-full object-cover object-center"/>
-                  </CarouselItem>
+                  </CarouselItem> 
                ))}
             </CarouselContent>
             

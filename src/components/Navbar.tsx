@@ -8,26 +8,29 @@ import { getServerSideUser } from "@/lib/payload-utils"
 import { cookies } from "next/headers"
 import UserAccountNav from "./UserAccountNav"
 import MobileNav from "./MobileNav"
+import { cn } from "@/lib/utils"
 
 const Navbar = async () => {
    const nextCookies = cookies()
    const {user} = await getServerSideUser(nextCookies)
       
    return (
-      <div className="bg-white sticky z-50 top-0 h-16">
-         <header className="relative bg-white border-b border-zinc-100">
+      <div className="bg-white sticky z-50 top-0">
+         <header className="relative bg-white border-b py-3 border-zinc-100">
             <Wrapper>
-               <div className="flex h-16 items-center">
-                  <div className="ml-4 flex lg:ml-0">
-                     <Logo />
+               <div className={cn("flex max-sm:flex-wrap items-center justify-between gap-4", {"max-sm:justify-center": !user})}>
+                  <div className="flex items-center">
+                     <div className="ml-4 flex lg:ml-0">
+                        <Logo />
+                     </div>
+                     
+                     <div className="hidden z-50 lg-ml-8 lg:block lg:self-stretch">
+                        <Navitems />
+                     </div>  
                   </div>
                   
-                  <div className="hidden z-50 lg-ml-8 lg:block lg:self-stretch ">
-                     <Navitems />
-                  </div>
-                  
-                  <div className="ml-auto flex items-center">
-                     <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end space-x-6">
+                  <div className="flex items-center flex-wrap">
+                     <div className="flex lg:flex-1 items-center justify-end space-x-3 lg:space-x-6">
                         {user ? null : <Link href='/sign-in' className={buttonVariants({variant: 'ghost'})}>Sign In</Link>}
                         {!user && <span className="h-6 w-px bg-zinc-200" aria-hidden/>}
                         {user ? (<UserAccountNav user={user}/>) : (<Link href='/sign-up' className={buttonVariants({variant: 'ghost'})}>Create account</Link>)}
@@ -43,7 +46,7 @@ const Navbar = async () => {
                         </div>
                      </div>
                      
-                     <MobileNav />
+                     {/* <MobileNav /> */}
                   </div>
                </div>
             </Wrapper>

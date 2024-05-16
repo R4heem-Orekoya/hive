@@ -26,7 +26,7 @@ const ProductReel = (props: ProductReelProps) => {
       getNextPageParam: (lastPage) => lastPage.nextPage
    })
    
-   const products = data?.pages.flatMap((page) =>  page.items)
+   const products = data?.pages.flatMap((page) => page.items)
    
    let map: (Product | null)[] = []
    if(products && products.length){
