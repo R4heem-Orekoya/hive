@@ -31,12 +31,12 @@ const page = () => {
         
         <ProductReel 
           query={{
-            sort: "asc",
-            limit: 3,
+            sort: "desc",
+            limit: 6,
           }} 
           title="New Arrivals" 
           subtitle="Newly arrived digital assets" 
-          href="sign-in"
+          href="products"
         />
       </Wrapper>
       
