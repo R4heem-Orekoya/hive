@@ -8,7 +8,7 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "https://markethive.up.railway.app",
+				hostname: "markethive.up.railway.app",
 			},
 		],
 	},
