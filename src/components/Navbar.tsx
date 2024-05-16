@@ -7,6 +7,7 @@ import Logo from "./Logo"
 import { getServerSideUser } from "@/lib/payload-utils"
 import { cookies } from "next/headers"
 import UserAccountNav from "./UserAccountNav"
+import MobileNav from "./MobileNav"
 
 const Navbar = async () => {
    const nextCookies = cookies()
@@ -17,8 +18,6 @@ const Navbar = async () => {
          <header className="relative bg-white border-b border-zinc-100">
             <Wrapper>
                <div className="flex h-16 items-center">
-                  {/* TODO MOBILE NAV*/}
-                  
                   <div className="ml-4 flex lg:ml-0">
                      <Logo />
                   </div>
@@ -43,6 +42,8 @@ const Navbar = async () => {
                            <Cart />
                         </div>
                      </div>
+                     
+                     <MobileNav />
                   </div>
                </div>
             </Wrapper>
